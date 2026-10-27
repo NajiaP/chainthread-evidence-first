@@ -1,0 +1,139 @@
+1
+00:00:00,000 --> 00:00:06,053
+This is ChainThread, built by Najia Pan, a research desk for Ethereum investigations.
+
+2
+00:00:06,053 --> 00:00:14,900
+It remembers the evidence standard a researcher approved, so the next review can use that standard alongside the transactions.
+
+3
+00:00:14,900 --> 00:00:20,487
+This prototype uses real Zetaris data, H-MEM, and live NVIDIA Nemotron calls.
+
+4
+00:00:22,000 --> 00:00:27,286
+Here, I paused because a few transfers do not establish a sustained relationship.
+
+5
+00:00:27,286 --> 00:00:30,132
+My standard is continued interaction over time.
+
+6
+00:00:30,132 --> 00:00:35,825
+I have not chosen a numeric threshold, and the system should not invent one.
+
+7
+00:00:35,825 --> 00:00:39,484
+Only this explicit confirmation writes the note into H-MEM.
+
+8
+00:00:47,000 --> 00:00:51,949
+These five records came from an actual Zetaris query of Ethereum transactions.
+
+9
+00:00:51,949 --> 00:00:56,898
+Two belong to the loaded baseline, and three to the observation window.
+
+10
+00:00:56,898 --> 00:00:59,785
+One recipient receives twice, forty-one minutes apart.
+
+11
+00:00:59,785 --> 00:01:03,909
+The app shows the historical query snapshot and its SQL.
+
+12
+00:01:03,909 --> 00:01:08,033
+It does not claim these recipients are new to Ethereum.
+
+13
+00:01:20,000 --> 00:01:26,273
+The server retrieves my confirmed record through H-MEM and sends it with these transactions to Nemotron.
+
+14
+00:01:26,273 --> 00:01:28,626
+This is an actual model request.
+
+15
+00:01:28,626 --> 00:01:30,586
+Its answer remains a draft.
+
+16
+00:01:30,586 --> 00:01:39,212
+The linked transaction hashes help me inspect the factual support, but a valid citation does not guarantee that the interpretation is correct.
+
+17
+00:02:05,000 --> 00:02:11,449
+Here I keep the judgment inconclusive, and I correct an error in the model's window description.
+
+18
+00:02:11,449 --> 00:02:15,076
+The repeated recipient appears only in the observation window.
+
+19
+00:02:15,076 --> 00:02:19,107
+After reviewing the table, I explicitly save the revised note.
+
+20
+00:02:19,107 --> 00:02:21,122
+The original stays in history.
+
+21
+00:02:21,122 --> 00:02:24,347
+The AI draft never becomes a judgment automatically.
+
+22
+00:02:30,000 --> 00:02:32,359
+After refresh, the revised note remains.
+
+23
+00:02:32,359 --> 00:02:39,044
+The app identifies an analysis that used an earlier note, so I know when to rerun it.
+
+24
+00:02:39,044 --> 00:02:44,549
+I can export the transactions, confirmed versions and model drafts as a research record.
+
+25
+00:02:44,549 --> 00:02:46,516
+My API key is excluded.
+
+26
+00:03:00,000 --> 00:03:01,826
+Zetaris supplies the evidence.
+
+27
+00:03:01,826 --> 00:03:06,393
+H-MEM stores and retrieves the confirmed standard and revision history.
+
+28
+00:03:06,393 --> 00:03:08,219
+Nemotron drafts the check.
+
+29
+00:03:08,219 --> 00:03:09,589
+The researcher decides.
+
+30
+00:03:09,589 --> 00:03:16,895
+We found a model error during testing, so citation links alone do not certify an interpretation.
+
+31
+00:03:16,895 --> 00:03:18,721
+Human review remains essential.
+
+32
+00:03:28,000 --> 00:03:31,845
+This is a local prototype using a historical data snapshot.
+
+33
+00:03:31,845 --> 00:03:36,074
+Nemotron currently runs through NVIDIA directly, and Nightshift is not integrated.
+
+34
+00:03:36,074 --> 00:03:39,149
+We have not proved an advantage over Project.
+
+35
+00:03:39,149 --> 00:03:46,839
+The next test is whether an analyst can prepare and hand off a more reviewable research note with less effort.
