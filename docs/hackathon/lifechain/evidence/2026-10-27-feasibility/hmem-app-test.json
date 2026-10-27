@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "checks": [
+    "unconfirmed write rejected",
+    "missing source rejected",
+    "confirmed write persisted",
+    "revision retains old record and lineage",
+    "new process loads current version first",
+    "retrieval context and audit trace available"
+  ],
+  "fixture": true,
+  "temporaryStore": "/var/folders/n5/tw6cx77d7cd3_qg4w2w5fdk00000gn/T/chainthread-memory-test-Ygn0E5",
+  "currentId": "mem-2",
+  "context": "[mem-2; CURRENT; source=fixture:confirmation-v2] Ethereum research baseline: new recipients mean absent from the loaded baseline, not new to the blockchain. Repeated transfers do not establish a sustained relationship.\n[mem-1; HISTORICAL, replaced by mem-2; source=fixture:confirmation-v1] Ethereum research baseline: new recipients mean absent from the loaded baseline, not new to the blockchain.",
+  "trace": {
+    "retrievalReason": "hybrid ranking for \"Ethereum research baseline: new recipients mean absent from the loaded baseline, not new to the blockchain.\" (domain: general)",
+    "strategy": "comprehensive",
+    "scores": {
+      "mem-2": 0.6713,
+      "mem-1": 0.6231
+    }
+  },
+  "ledger": {
+    "create": 2,
+    "update": 1,
+    "read": 2
+  }
+}
