@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Lifechain × ETH 切片 — 图谱体验层 mock · Graph Experience Layer Mock（2026-10-26）</title>
+<style>
+:root{--bg:#FAF6EF;--surface:#fff;--muted:#f3efe6;--text:#201D1A;--muted-tx:#6b655c;--border:#ddd5c7;--accent:#DE8A1D;}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);max-width:660px;margin:0 auto;padding:16px;}
+h1{font-size:17px;margin:0 0 4px;}
+.sub{font-size:13px;color:var(--muted-tx);margin-bottom:12px;}
+.gnode{fill:var(--surface);stroke:var(--border);stroke-width:1.5}
+.gjudge{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.gtxt{fill:var(--text);font-size:12px}
+.gen{fill:var(--muted-tx);font-size:10px}
+.gsmall{fill:var(--muted-tx);font-size:11px}
+.gedge{stroke:var(--muted-tx);stroke-width:1.5}
+.gnew{stroke:var(--accent);stroke-width:3}
+.gnewdim{stroke:var(--muted-tx);stroke-width:2;stroke-dasharray:5 4}
+.note{font-size:13px;background:var(--muted);border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin:8px 0;}
+button{padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;margin:0 6px 6px 0;}
+svg{width:100%;height:auto;display:block;}
+</style>
+</head>
+<body>
+<h1>图谱体验层 mock · Graph Experience Layer Mock</h1>
+<div class="sub">演示用假数据，非真实链上数据。真实版接 Zetaris eth_transactions（2026-09-01 分区）。<br>Demo data only — not real on-chain data. The real version connects to Zetaris eth_transactions (partition 2026-09-01). 对应 PRD §2 第 5 条 · See PRD §2 item 5.</div>
+<svg viewBox="0 0 580 290">
+<line x1="175" y1="145" x2="235" y2="145" class="gedge"/>
+<line x1="350" y1="130" x2="440" y2="70" class="gedge"/>
+<line x1="350" y1="160" x2="440" y2="220" class="gedge"/>
+<line id="edgeNew" x1="350" y1="145" x2="440" y2="145" class="gnew" style="display:none"/>
+<rect x="15" y="105" width="160" height="80" rx="12" class="gjudge"/>
+<text x="95" y="130" text-anchor="middle" class="gtxt" id="judgeTitle">判断：0xABC 在累积</text>
+<text x="95" y="146" text-anchor="middle" class="gen" id="judgeTitleEn">0xABC accumulating</text>
+<text x="95" y="166" text-anchor="middle" class="gsmall" id="judgeState">盯防中 · Monitoring</text>
+<rect x="235" y="120" width="115" height="50" rx="25" class="gnode"/>
+<text x="292" y="143" text-anchor="middle" class="gtxt">0xABC（被盯）</text>
+<text x="292" y="158" text-anchor="middle" class="gen">watched</text>
+<rect x="440" y="45" width="115" height="50" rx="25" class="gnode"/>
+<text x="497" y="68" text-anchor="middle" class="gtxt">0x111（对手方）</text>
+<text x="497" y="83" text-anchor="middle" class="gen">counterparty</text>
+<rect x="440" y="195" width="115" height="50" rx="25" class="gnode"/>
+<text x="497" y="218" text-anchor="middle" class="gtxt">0x222（对手方）</text>
+<text x="497" y="233" text-anchor="middle" class="gen">counterparty</text>
+<g id="nodeNew" style="display:none">
+<rect x="440" y="120" width="115" height="50" rx="25" class="gnode"/>
+<text x="497" y="143" text-anchor="middle" class="gtxt">0xNEW（新地址）</text>
+<text x="497" y="158" text-anchor="middle" class="gen">new address</text>
+</g>
+<text x="205" y="132" text-anchor="middle" class="gsmall">盯防 Watching</text>
+<text x="395" y="92" text-anchor="middle" class="gsmall">12.5 ETH</text>
+<text x="395" y="205" text-anchor="middle" class="gsmall">3.2 ETH</text>
+<text id="edgeNewLabel" x="395" y="132" text-anchor="middle" class="gsmall" style="display:none">240 ETH · New tx</text>
+</svg>
+<div id="note" class="note">种子状态：判断「0xABC 在累积」盯防中，图上是它的历史对手方。<br>Seed state: judgment “0xABC accumulating” is being watched; the graph shows its historical counterparties.</div>
+<div>
+<button onclick="act('trigger')">模拟触发 · Trigger：新地址大额转入</button>
+<button onclick="act('memory')" id="memBtn">记忆：开 · Memory On</button>
+<button onclick="act('review')">复核 · Review：修正判断</button>
+<button onclick="act('reset')">重置 · Reset to seed</button>
+</div>
+<script>
+var state = {phase:'seed', memory:true};
+function render(){
+  var show = state.phase !== 'seed';
+  document.getElementById('edgeNew').style.display = show ? '' : 'none';
+  document.getElementById('nodeNew').style.display = show ? '' : 'none';
+  document.getElementById('edgeNewLabel').style.display = show ? '' : 'none';
+  document.getElementById('edgeNew').setAttribute('class', state.memory ? 'gnew' : 'gnewdim');
+  document.getElementById('memBtn').textContent = state.memory ? '记忆：开 · Memory On' : '记忆：关 · Memory Off';
+  var t = document.getElementById('judgeTitle'), te = document.getElementById('judgeTitleEn'), st = document.getElementById('judgeState'), n = document.getElementById('note');
+  if (state.phase === 'seed') { t.textContent = '判断：0xABC 在累积'; te.textContent = '0xABC accumulating'; st.textContent = '盯防中 · Monitoring'; n.innerHTML = '种子状态：判断「0xABC 在累积」盯防中，图上是它的历史对手方。<br>Seed state: judgment “0xABC accumulating” is being watched; the graph shows its historical counterparties.'; }
+  else if (state.phase === 'triggered' && state.memory) { t.textContent = '判断：0xABC 在累积'; te.textContent = '0xABC accumulating'; st.textContent = '待复核 · Pending review'; n.innerHTML = '触发了：0xABC 向从未见过的 0xNEW 一次转出 240 ETH，超平时基线 20 倍（B2 偏离）——新边高亮，判断翻成待复核。<br>Triggered: 0xABC sent 240 ETH to never-seen 0xNEW in one transfer, 20× its usual baseline (B2 deviation) — the new edge highlights and the judgment flips to pending review.'; }
+  else if (state.phase === 'triggered' && !state.memory) { t.textContent = '判断：0xABC 在累积'; te.textContent = '0xABC accumulating'; st.textContent = '盯防中（未变）· Unchanged'; n.innerHTML = '记忆关闭：同一笔 240 ETH 新交易出现了，但判断节点纹丝不动——这就是 D1 对照的一半：没有记忆，图只是多了条边。<br>Memory off: the same 240 ETH transfer appeared, but the judgment node did not move — half of the D1 contrast: without memory, the graph just gains an edge.'; }
+  else { t.textContent = '修正：0xABC 转向派发'; te.textContent = '0xABC distributing'; st.textContent = '已更新 · Updated'; n.innerHTML = '复核完成：你把判断改成「0xABC 转向派发」，新理由挂在边上存下来——下次再看到它，产品记得的是这个版本。<br>Review done: you revised the judgment to “0xABC distributing”, and the new reasoning is saved on the edge — next time, the product remembers this version.'; }
+}
+function act(a){
+  if (a === 'trigger') state.phase = 'triggered';
+  if (a === 'memory') state.memory = !state.memory;
+  if (a === 'review') { if (state.phase === 'triggered' && state.memory) state.phase = 'reviewed'; }
+  if (a === 'reset') state.phase = 'seed';
+  render();
+}
+render();
+</script>
+</body>
+</html>
