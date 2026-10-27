@@ -1,0 +1,241 @@
+{
+  "product": "ChainThread",
+  "disclosure": "Real Zetaris query snapshot; H-MEM official reference with hash embeddings; direct model provider; Nightshift NOT integrated. Model output is advisory; only human confirmations become memory.",
+  "facts": {
+    "source": {
+      "started_at": "2026-10-27T22:03:19.442662+00:00",
+      "completed_at": "2026-10-27T22:07:07.065565+00:00",
+      "sql": "SELECT hash, from_address AS sender, to_address AS recipient, value, block_timestamp, receipt_status FROM AWS_BLOCKCHAIN_S3.eth_transactions WHERE date = '2026-09-01' AND from_address = '0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f' AND receipt_status = 1 AND value > 0 AND to_address IS NOT NULL AND from_address <> to_address AND block_timestamp >= TIMESTAMP '2026-09-01 08:00:00' AND block_timestamp <= TIMESTAMP '2026-09-01 18:00:00' LIMIT 30",
+      "result": {
+        "records": [
+          {
+            "recipient": "0x547137ff701bc587aba537595b14e03b4dfa2553",
+            "receipt_status": "1",
+            "hash": "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3",
+            "block_timestamp": "2026-09-01 08:15:47.0",
+            "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+            "value": "8.9E16"
+          },
+          {
+            "recipient": "0xf66f23599966ba7b6b1329641b5e4a6f53ec7c6e",
+            "receipt_status": "1",
+            "hash": "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53",
+            "block_timestamp": "2026-09-01 11:18:23.0",
+            "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+            "value": "8.1E15"
+          },
+          {
+            "recipient": "0x11be8e10c8b44ca05481f23f2b623fa209bea324",
+            "receipt_status": "1",
+            "hash": "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5",
+            "block_timestamp": "2026-09-01 12:05:11.0",
+            "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+            "value": "2.0E15"
+          },
+          {
+            "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+            "receipt_status": "1",
+            "hash": "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0",
+            "block_timestamp": "2026-09-01 12:15:35.0",
+            "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+            "value": "1.424E18"
+          },
+          {
+            "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+            "receipt_status": "1",
+            "hash": "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e",
+            "block_timestamp": "2026-09-01 12:56:35.0",
+            "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+            "value": "1.0E17"
+          }
+        ],
+        "pageNumber": 1,
+        "pageLimit": 30,
+        "totalCount": 5,
+        "totalPages": 1
+      }
+    },
+    "rows": [
+      {
+        "recipient": "0x547137ff701bc587aba537595b14e03b4dfa2553",
+        "receipt_status": "1",
+        "hash": "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3",
+        "block_timestamp": "2026-09-01 08:15:47.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "8.9E16"
+      },
+      {
+        "recipient": "0xf66f23599966ba7b6b1329641b5e4a6f53ec7c6e",
+        "receipt_status": "1",
+        "hash": "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53",
+        "block_timestamp": "2026-09-01 11:18:23.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "8.1E15"
+      },
+      {
+        "recipient": "0x11be8e10c8b44ca05481f23f2b623fa209bea324",
+        "receipt_status": "1",
+        "hash": "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5",
+        "block_timestamp": "2026-09-01 12:05:11.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "2.0E15"
+      },
+      {
+        "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+        "receipt_status": "1",
+        "hash": "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0",
+        "block_timestamp": "2026-09-01 12:15:35.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "1.424E18"
+      },
+      {
+        "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+        "receipt_status": "1",
+        "hash": "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e",
+        "block_timestamp": "2026-09-01 12:56:35.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "1.0E17"
+      }
+    ],
+    "baselineRecipients": [
+      "0x547137ff701bc587aba537595b14e03b4dfa2553",
+      "0xf66f23599966ba7b6b1329641b5e4a6f53ec7c6e"
+    ],
+    "newRecipients": [
+      "0x11be8e10c8b44ca05481f23f2b623fa209bea324",
+      "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5"
+    ]
+  },
+  "versions": [
+    {
+      "id": "mem-1",
+      "note": "I paused this investigation because a few transfers do not establish a sustained relationship. Recipient ownership is unknown.",
+      "standard": "I want evidence of continued interaction over time before treating this as a sustained relationship. Do not treat two transfers in a short interval as sufficient by themselves.",
+      "at": "2026-10-27T22:12:27.238Z"
+    },
+    {
+      "id": "mem-2",
+      "note": "Demo review: I retain the inconclusive judgment. The loaded observation contains two transfers to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5, 41 minutes apart; this does not yet meet my standard for a sustained relationship. Check later activity before reconsidering.",
+      "standard": "I want evidence of continued interaction over time before treating this as a sustained relationship. Do not treat two transfers in a short interval as sufficient by themselves.",
+      "at": "2026-10-27T22:18:29.969Z",
+      "supersedes": "mem-1"
+    }
+  ],
+  "analyses": [
+    {
+      "id": "84099b2c-aafc-41a1-a4a5-0a3e8899d682",
+      "at": "2026-10-27T22:18:17.239Z",
+      "memoryId": "mem-1",
+      "provider": "https://integrate.api.nvidia.com/v1",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "answer": {
+        "summary": "Researcher paused investigation because two observed transfers from address 0x3a6308bf... to 0x4db0bc4... (hashes 0x5d1d6a... and 0xc3343a...) do not by themselves establish a sustained relationship. Recipient ownership and intent remain unconfirmed.",
+        "supported_claims": [
+          {
+            "claim": "Address 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f sent 8.9E16 wei to 0x547137... at block 2026-09-01 08:15:47 (hash: 0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3)",
+            "hashes": [
+              "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3"
+            ]
+          },
+          {
+            "claim": "Address 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f sent 8.1E15 wei to 0xf66f23599966ba7b6b1329641b5e4a6f53ec7c6e at block 2026-09-01 11:18:23 (hash: 0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53)",
+            "hashes": [
+              "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53"
+            ]
+          },
+          {
+            "claim": "Address 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f sent 2.0E15 wei to 0x11be8e10c8b44ca05481f23f2b623fa209bea324 at block 2026-09-01 12:05:11 (hash: 0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5)",
+            "hashes": [
+              "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5"
+            ]
+          },
+          {
+            "claim": "Address 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f sent 1.424E18 wei to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5 at block 2026-09-01 12:15:35 (hash: 0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0)",
+            "hashes": [
+              "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0"
+            ]
+          },
+          {
+            "claim": "Address 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f sent 1.0E17 wei to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5 at block 2026-09-01 12:56:35 (hash: 0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e)",
+            "hashes": [
+              "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e"
+            ]
+          }
+        ],
+        "next_check": "Verify recipient address 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5's on-chain activity and balance changes to determine if interactions are part of a pattern beyond these two transfers.",
+        "limitations": [
+          "Recipient ownership and intent are unknown; no evidence of sustained relationship or continued interaction beyond the observed transfers.",
+          "Only five transfers from the specified address within the 8:00-18:00 UTC window on 2026-09-01 are captured; earlier or later activity is unchecked.",
+          "User-confirmed evidence standard requires continued interaction over time; two transfers in a short interval are insufficient by themselves."
+        ]
+      },
+      "retrieval": "[mem-1; CURRENT; source=human-confirmed research note; evidence: Zetaris query 2026-10-27T22:07:07.065565+00:00] {\"note\":\"I paused this investigation because a few transfers do not establish a sustained relationship. Recipient ownership is unknown.\",\"standard\":\"I want evidence of continued interaction over time before treating this as a sustained relationship. Do not treat two transfers in a short interval as sufficient by themselves.\"}"
+    },
+    {
+      "id": "6b274478-46f8-47af-86af-ec1637f8c9a0",
+      "at": "2026-10-27T22:18:42.996Z",
+      "memoryId": "mem-2",
+      "provider": "https://integrate.api.nvidia.com/v1",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "answer": {
+        "summary": "The research note identifies several transfers from 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f on 2026-09-01 between 08:00 and 18:00 UTC. Three transfers occurred within the 08:00-12:00 UTC baseline window (hashes 0x987145de..., 0xd6133120..., 0xd956bad3...). Two additional transfers occurred in the 12:00-18:00 UTC observation window, both directed to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5 with a 41-minute gap (hashes 0x5d1d6a3a..., 0xc3343a31...). A qualitative user standard exists requiring 'continued interaction over time' to validate a 'sustained relationship', but the current dataset does not contain later activity beyond 18:00 UTC.",
+        "supported_claims": [
+          {
+            "claim": "Three transfers from 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f to distinct recipients occurred between 08:00 and 12:00 UTC on 2026-09-01.",
+            "hashes": [
+              "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3",
+              "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53",
+              "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5"
+            ]
+          },
+          {
+            "claim": "Two transfers from 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5 occurred between 12:00 and 18:00 UTC on 2026-09-01, separated by 41 minutes.",
+            "hashes": [
+              "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0",
+              "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e"
+            ]
+          }
+        ],
+        "next_check": "Retrieve further transactions from 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f on subsequent dates to assess whether interaction continued beyond the observed 18:00 UTC cutoff, against the qualitative standard of sustained relationship.",
+        "limitations": [
+          "No transactions beyond 18:00 UTC on 2026-09-01 are included in the current observation window.",
+          "The user-confirmed evidence standard requires continued interaction over time; the present data cannot confirm or refute this.",
+          "No information regarding token type, purpose, or off-chain context is available from on-chain data alone."
+        ]
+      },
+      "retrieval": "[mem-2; CURRENT; source=human-confirmed research note; evidence: Zetaris query 2026-10-27T22:07:07.065565+00:00] {\"note\":\"Demo review: I retain the inconclusive judgment. The loaded observation contains two transfers to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5, 41 minutes apart; this does not yet meet my standard for a sustained relationship. Check later activity before reconsidering.\",\"standard\":\"I want evidence of continued interaction over time before treating this as a sustained relationship. Do not treat two transfers in a short interval as sufficient by themselves.\"}",
+      "qualityNotes": [
+        "Review finding: this answer incorrectly assigns the 12:05:11 transfer to the baseline. The correct split is 2 baseline transfers and 3 observation transfers. Do not approve this claim."
+      ]
+    },
+    {
+      "id": "f014ed05-1393-4e58-ab2e-2e6bfdeab2f4",
+      "at": "2026-10-27T22:19:32.841Z",
+      "memoryId": "mem-2",
+      "provider": "https://integrate.api.nvidia.com/v1",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "answer": {
+        "summary": "The note reviewer applied a qualitative standard requiring sustained interaction over time. The query data shows two baseline transfers and three observation-period transfers. One recipient (0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5) received repeated transfers 41 minutes apart, but no activity beyond 18:00 UTC is available. The judgment remains inconclusive pending later activity.",
+        "supported_claims": [
+          {
+            "claim": "Sender 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f made 5 transfers on 2026-09-01, all receipt_status=1, value>0, to_address != from_address.",
+            "hashes": [
+              "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3",
+              "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53",
+              "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5",
+              "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0",
+              "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e"
+            ]
+          }
+        ],
+        "next_check": "Retrieve transactions for sender 0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f after block_timestamp >= 2026-09-01 18:00:00 UTC to assess whether the repeated recipient pattern continues or if other recipients appear.",
+        "limitations": [
+          "Evidence only covers a single 10-hour window (08:00-18:00 UTC). Activity after 18:00 UTC is unknown.",
+          "Repeated recipient 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5 shows two transfers 41 minutes apart within the observation window, but this alone does not satisfy a standard for a sustained relationship without later confirmation.",
+          "No identity, intent, or full-chain novelty claims are made or verifiable from the supplied data."
+        ]
+      },
+      "retrieval": "[mem-2; CURRENT; source=human-confirmed research note; evidence: Zetaris query 2026-10-27T22:07:07.065565+00:00] {\"note\":\"Demo review: I retain the inconclusive judgment. The loaded observation contains two transfers to 0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5, 41 minutes apart; this does not yet meet my standard for a sustained relationship. Check later activity before reconsidering.\",\"standard\":\"I want evidence of continued interaction over time before treating this as a sustained relationship. Do not treat two transfers in a short interval as sufficient by themselves.\"}"
+    }
+  ]
+}
