@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-27T22:03:19.442662+00:00",
+  "completed_at": "2026-10-27T22:07:07.065565+00:00",
+  "sql": "SELECT hash, from_address AS sender, to_address AS recipient, value, block_timestamp, receipt_status FROM AWS_BLOCKCHAIN_S3.eth_transactions WHERE date = '2026-09-01' AND from_address = '0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f' AND receipt_status = 1 AND value > 0 AND to_address IS NOT NULL AND from_address <> to_address AND block_timestamp >= TIMESTAMP '2026-09-01 08:00:00' AND block_timestamp <= TIMESTAMP '2026-09-01 18:00:00' LIMIT 30",
+  "result": {
+    "records": [
+      {
+        "recipient": "0x547137ff701bc587aba537595b14e03b4dfa2553",
+        "receipt_status": "1",
+        "hash": "0x987145de362cfd0fd222953d1ccf7d339cd6ec1629310125e8eb74c4883a5ee3",
+        "block_timestamp": "2026-09-01 08:15:47.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "8.9E16"
+      },
+      {
+        "recipient": "0xf66f23599966ba7b6b1329641b5e4a6f53ec7c6e",
+        "receipt_status": "1",
+        "hash": "0xd6133120ddf720f13141ca4fe1cadc030b7cb4632b89cbf2db7890797e0d3d53",
+        "block_timestamp": "2026-09-01 11:18:23.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "8.1E15"
+      },
+      {
+        "recipient": "0x11be8e10c8b44ca05481f23f2b623fa209bea324",
+        "receipt_status": "1",
+        "hash": "0xd956bad3bd59402ad397429278a5bfee0070bbc9cbe79bd12e1fc1375251a5e5",
+        "block_timestamp": "2026-09-01 12:05:11.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "2.0E15"
+      },
+      {
+        "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+        "receipt_status": "1",
+        "hash": "0x5d1d6a3ac7010359d83c93b8d7eb059e0a268cad3eeedcd6060e87200b9cc3d0",
+        "block_timestamp": "2026-09-01 12:15:35.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "1.424E18"
+      },
+      {
+        "recipient": "0x4db0bc41768f5eb844cbce68f13ca62f6b9baca5",
+        "receipt_status": "1",
+        "hash": "0xc3343a31a2936fddf5babf748bb051adef1ea19f5e410664d05f69b55acec15e",
+        "block_timestamp": "2026-09-01 12:56:35.0",
+        "sender": "0x3a6308bf8eb87cd55ee2c1be741e41ef15d5193f",
+        "value": "1.0E17"
+      }
+    ],
+    "pageNumber": 1,
+    "pageLimit": 30,
+    "totalCount": 5,
+    "totalPages": 1
+  }
+}
